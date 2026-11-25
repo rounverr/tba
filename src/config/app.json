@@ -1,0 +1,12 @@
+{
+  "name": "TBA",
+  "organization": "Rounver Corp.",
+  "description": "Your next project starts here.",
+  "locale": "en",
+  "languages": ["en", "es", "pt", "de", "fr", "it", "zh", "ja", "hi", "ar"],
+  "theme": "light",
+  "primaryColor": "#2854cf",
+  "supportEmail": "",
+  "logo": "",
+  "heroImage": "/auth-marble.webp"
+}

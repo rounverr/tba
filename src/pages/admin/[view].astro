@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro';import Admin from '../../components/Admin';
+export function getStaticPaths(){return ['users','registrations','roles','audit','settings','profile','security'].map(view=>({params:{view}}))}
+const {view}=Astro.params;
+---
+<Base title="Your space"><Admin view={`/${view}`} client:load/></Base>

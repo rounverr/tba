@@ -1,0 +1,21 @@
+{
+  "No encontramos una cuenta habilitada con este correo. Revisa la dirección o solicita acceso al administrador.": "errorAccessNotEnabled",
+  "El código no es válido o ha vencido. Intenta nuevamente.": "errorInvalidCode",
+  "El código no es válido o ha vencido.": "errorInvalidCode",
+  "El código no es válido. Intenta nuevamente.": "errorInvalidCode",
+  "Revisa los datos ingresados.": "errorInvalidData",
+  "Demasiados intentos. Espera unos minutos y vuelve a intentar.": "errorTooMany",
+  "Completa la verificación de seguridad.": "errorCaptcha",
+  "La verificación de seguridad venció. Intenta nuevamente.": "errorCaptchaExpired",
+  "El registro está cerrado. Contacta al administrador.": "errorRegistrationClosed",
+  "El registro se cerró. Contacta al administrador.": "errorRegistrationClosed",
+  "No pudimos completar el registro. Contacta al administrador.": "errorRegistrationFailed",
+  "El registro no está disponible.": "errorRegistrationUnavailable",
+  "Tu solicitud requiere revisión administrativa.": "errorPending",
+  "Cambió la configuración de registro. Intenta nuevamente.": "errorRegistrationChanged",
+  "Inicia sesión para continuar.": "errorSession",
+  "Completa la verificación de dos factores.": "errorMfaRequired",
+  "Tu cuenta no tiene acceso a este espacio.": "errorDenied",
+  "No tienes permiso para realizar esta acción.": "errorPermission",
+  "El servicio no está disponible. Intenta nuevamente o contacta al administrador.": "errorUnavailable"
+}

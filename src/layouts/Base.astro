@@ -1,0 +1,31 @@
+---
+import '@fontsource-variable/inter';
+import '../styles/global.css';
+import app from '../config/app.json';
+import {resolveLanguage,enabledLanguageCodes as languageCodes,defaultLanguage,languageDirection,languageStorageKey,type AuthPage} from '../lib/i18n/config';
+import {translate,pageTitleKey} from '../lib/i18n/catalog.server';
+const {title='Welcome',auth=false,authPage='login'}=Astro.props as {title?:string;auth?:boolean;authPage?:AuthPage};
+const titles=Object.fromEntries(languageCodes.map(code=>[code,`${translate(code,pageTitleKey[authPage])} · ${app.name}`]));
+const json=(value:unknown)=>JSON.stringify(value).replace(/</g,'\\u003c');
+const authBoot=`(()=>{const resolve=${resolveLanguage.toString()};let saved=null;try{saved=localStorage.getItem(${json(languageStorageKey)})}catch{}const language=resolve(saved,[...(navigator.languages||[]),navigator.language],${json(languageCodes)},${json(defaultLanguage)});const html=document.documentElement;html.lang=language;html.dir=language==='ar'?'rtl':'ltr';html.dataset.authLocale=language;html.dataset.authPending='';document.title=${json(titles)}[language];})()`;
+---
+<!doctype html>
+<html data-i18n-scope={auth ? "auth" : "panel"} lang={auth ? "en" : defaultLanguage} dir={auth ? "ltr" : languageDirection(defaultLanguage)}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content={`${app.name} · ${auth ? translate("en", "metaDescription") : "Secure access to your workspace"}`} />
+    <meta name="theme-color" content={app.primaryColor} />
+    <title>{auth ? translate("en", pageTitleKey[authPage]) : title} · {app.name}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script is:inline define:vars={{ defaultTheme: app.theme }}>
+      try {
+        const theme = localStorage.getItem('tba-theme') || defaultTheme;
+        if (theme === 'dark') document.documentElement.classList.add('dark');
+      } catch {}
+    </script>
+    {auth && <script is:inline set:html={authBoot} />}
+    <script>import "../lib/i18n/bootstrap";</script>
+  </head>
+  <body style={`--primary:${app.primaryColor}`}><slot /></body>
+</html>

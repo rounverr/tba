@@ -1,0 +1,41 @@
+# Generate a unique secret locally, e.g. openssl rand -base64 48
+BETTER_AUTH_SECRET=
+
+# Verified sender for the selected transactional email service.
+MAIL_FROM=
+
+# WAVICC - Rounver's preferred future transactional-email integration.
+# Placeholder ONLY: currently unused by TBA. Do not set MAIL_PROVIDER=wavicc yet.
+# Never commit a real credential here; put it in .dev.vars or Wrangler Secrets.
+WAVICC_API_KEY=
+
+# OPTIONAL custom transactional-email provider (future adapter, not yet implemented).
+CUSTOM_MAIL_API_KEY=
+
+# Existing legacy HTTP adapter compatibility: do not remove unless the adapter is retired.
+RESEND_API_KEY=
+
+# Cloudflare Email Sending uses the EMAIL binding, not an API key here.
+# Optional Google OAuth and Turnstile secrets.
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+TURNSTILE_SECRET_KEY=
+TURNSTILE_SITE_KEY=
+
+# Optional standalone SQLite settings. APP_URL is the public origin.
+# SQLITE_PATH=work/sqlite/tba.db
+# APP_URL=http://127.0.0.1:8787
+# HOST=127.0.0.1
+# PORT=8787
+# MAIL_PROVIDER=local
+
+# PostgreSQL standalone. Store the connection string in this private file.
+# DATABASE_URL=
+# PG_POOL_MAX=10
+# PG_CONNECT_TIMEOUT_MS=5000
+# PG_IDLE_TIMEOUT_MS=30000
+# PG_CA_FILE=
+
+# Node only. Leave unset to identify clients by the socket address.
+# List explicit proxy IPs or CIDRs and have the edge sanitize X-Forwarded-For.
+# TRUSTED_PROXIES=

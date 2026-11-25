@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node"],
+    "lib": ["ESNext"]
+  },
+  "include": [
+    "src/server/**/*.ts",
+    "tests/**/*.ts",
+    "worker-configuration.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", "tests/browser"]
+}

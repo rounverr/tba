@@ -1,0 +1,23 @@
+node_modules/
+dist/
+.astro/
+.wrangler/
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+work/
+*.log
+
+# Per-installation configuration and local database artifacts
+/tba.runtime.json
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3
+*.sqlite3-wal
+*.sqlite3-shm
+*.dump
